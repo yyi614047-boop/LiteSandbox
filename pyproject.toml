@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litesandbox"
+version = "0.3.0"
+description = "Synchronous Python SDK and local Docker sandbox service for agents"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+py-modules = ["litesandbox", "litesandbox_client", "litesandbox_preview", "litesandbox_egress", "litesandbox_runs"]
