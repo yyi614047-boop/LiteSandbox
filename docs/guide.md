@@ -149,7 +149,7 @@ python run_agent.py "在沙箱里写一个 shell 脚本，执行后读回它生�
 python -m litesandbox serve --pool-size 10
 
 # 另开终端运行，和 --pool-size 0 的同条件结果比较
-python bench_sandboxes.py --attempts 20 --concurrency 1
+python benchmarks/bench_sandboxes.py --attempts 20 --concurrency 1
 ```
 
 
@@ -205,4 +205,4 @@ flowchart LR
     Proxy --> Upstream["获授权的 HTTPS 服务"]
 ```
 
-服务面向可信的本机调用方，管理接口监听回环地址。常用实现入口包括 [HTTP 服务](../litesandbox.py)、[Python SDK](../litesandbox_client.py)、[异步执行](../litesandbox_runs.py)、[出站代理](../litesandbox_egress.py) 和 [MCP 适配器](../litesandbox_mcp.py)。
+服务面向可信的本机调用方，管理接口监听回环地址。常用实现入口包括 [HTTP 服务](../src/litesandbox/server.py)、[Python SDK](../src/litesandbox/client.py)、[异步执行](../src/litesandbox/runs.py)、[出站代理](../src/litesandbox/egress.py) 和 [MCP 适配器](../src/litesandbox/mcp.py)。

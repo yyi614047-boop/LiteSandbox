@@ -4,7 +4,7 @@ import socket
 import unittest
 from unittest.mock import Mock, patch
 
-from litesandbox_egress import PublicHTTPS, fetch, normalize_hosts
+from litesandbox.egress import PublicHTTPS, fetch, normalize_hosts
 
 
 class SourcePolicyTests(unittest.TestCase):
@@ -17,7 +17,7 @@ class SourcePolicyTests(unittest.TestCase):
     def test_redirect_rechecked_before_connect(self):
         for destination in ("https://blocked.example/file", "http://allowed.example/file",
                             "https://allowed.example:8443/file", "https://user@allowed.example/file"):
-            with self.subTest(destination=destination), patch("litesandbox_egress.PublicHTTPS") as connect:
+            with self.subTest(destination=destination), patch("litesandbox.egress.PublicHTTPS") as connect:
                 response = connect.return_value.getresponse.return_value
                 response.status = 302
                 response.getheader.return_value = destination

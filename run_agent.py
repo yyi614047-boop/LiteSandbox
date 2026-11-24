@@ -6,14 +6,12 @@ import json
 import shutil
 import subprocess
 import sys
-from pathlib import Path
 
-from litesandbox_client import LiteSandboxClient, LiteSandboxError
+from litesandbox.client import LiteSandboxClient, LiteSandboxError
 
 
 def codex_command(codex: str, sandbox_id: str, port: int, prompt: str) -> list[str]:
-    adapter = Path(__file__).resolve().with_name("litesandbox_mcp.py")
-    args = [str(adapter), "--sandbox-id", sandbox_id, "--port", str(port)]
+    args = ["-m", "litesandbox.mcp", "--sandbox-id", sandbox_id, "--port", str(port)]
     config = "mcp_servers.litesandbox"
     instructions = (
         "Perform the task's file and command operations through the litesandbox "

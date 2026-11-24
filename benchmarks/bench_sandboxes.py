@@ -6,7 +6,7 @@ import math
 import time
 from concurrent.futures import ThreadPoolExecutor
 
-from litesandbox_client import LiteSandboxClient
+from litesandbox.client import LiteSandboxClient
 
 
 def measure(port: int, attempts: int, concurrency: int) -> dict:

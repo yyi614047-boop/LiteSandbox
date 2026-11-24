@@ -6,7 +6,7 @@ from typing_extensions import TypedDict
 from mcp.server.fastmcp import FastMCP
 from mcp.server.fastmcp.exceptions import ToolError
 
-from litesandbox_client import LiteSandboxClient, LiteSandboxError
+from .client import LiteSandboxClient, LiteSandboxError
 
 
 class ExecutionResult(TypedDict):
